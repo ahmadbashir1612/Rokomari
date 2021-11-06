@@ -7,19 +7,25 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.project.rokomari.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:name="com.project.rokomari.ui.Open.OpenFragment"
+        android:label="@string/title_open"
+        tools:layout="@layout/fragment_open" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.project.rokomari.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_in_progress"
+        android:name="com.project.rokomari.ui.InProgress.InProgressFragment"
+        android:label="@string/title_in_progress"
+        tools:layout="@layout/fragment_test" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.project.rokomari.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_test"
+        android:name="com.project.rokomari.ui.test.TestFragment"
+        android:label="@string/title_test"
+        tools:layout="@layout/fragment_test" />
+
+    <fragment
+        android:id="@+id/navigation_done"
+        android:name="com.project.rokomari.ui.test.TestFragment"
+        android:label="@string/title_done"
+        tools:layout="@layout/fragment_done" />
 </navigation>

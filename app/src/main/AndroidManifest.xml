@@ -10,9 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Rokomari">
         <activity
+            android:name=".TaskDetailActivity"
+            android:exported="true"
+            android:label="Task Details"/>
+        <activity
+            android:name=".TaskAddEditActivity"
+            android:exported="true"
+            android:label="Add Tasks" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name">
+            android:label="@string/app_name" />
+        <activity
+            android:name=".CalenderActivity"
+            android:exported="true"
+            android:label="Select Deadline" />
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/AppThemeForSplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">Rokomari</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="app_name">NoteMe</string>
+    <string name="title_open">Open</string>
+    <string name="title_in_progress">In-progress</string>
+    <string name="title_test">Test</string>
+    <string name="title_done">Done</string>
 </resources>

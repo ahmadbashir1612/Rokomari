@@ -3,7 +3,32 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Projects/Rokomari/app/src/main/res/layout/activity_main.xml" value="0.5541666666666667" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/drawable-anydpi/ic_action_down.xml" value="0.5703125" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/drawable/bottom_navigation_curve_layout.xml" value="0.5703125" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.346875" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.346875" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/drawable/ic_baseline_keyboard_arrow_down_24.xml" value="0.5703125" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/drawable/ripple_effect_button_curve.xml" value="0.5703125" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/drawable/rounded_dialog.xml" value="0.5703125" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/drawable/save_button.xml" value="0.4359375" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/drawable/spineer_border.xml" value="0.5703125" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/layout/activity_calender.xml" value="0.4197916666666667" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/layout/activity_splash.xml" value="0.5" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/layout/activity_task_add.xml" value="0.33" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/layout/activity_task_add_edit.xml" value="0.5541666666666667" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/layout/activity_task_detail.xml" value="0.25" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/layout/activity_task_edit.xml" value="0.5541666666666667" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/layout/dialog_fragment_url_email_phone.xml" value="0.3307291666666667" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/layout/fragment_dashboard.xml" value="0.5541666666666667" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/layout/fragment_done.xml" value="0.4197916666666667" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/layout/fragment_home.xml" value="0.5541666666666667" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/layout/fragment_in_progress.xml" value="0.5541666666666667" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/layout/fragment_open.xml" value="0.5541666666666667" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/layout/fragment_test.xml" value="0.5541666666666667" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/layout/listitems_custom_spineer_layout.xml" value="0.5541666666666667" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/layout/task_list_item.xml" value="0.5" />
+        <entry key="..\:/Projects/Rokomari/app/src/main/res/menu/bottom_nav_menu.xml" value="0.5541666666666667" />
       </map>
     </option>
   </component>
