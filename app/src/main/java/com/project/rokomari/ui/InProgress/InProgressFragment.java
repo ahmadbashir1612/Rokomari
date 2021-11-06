@@ -10,12 +10,25 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.project.rokomari.R;;
+import com.project.rokomari.R;
+import com.project.rokomari.adapter.TaskListAdapter;
+import com.project.rokomari.model.Task;
+;
 
+import java.util.List;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class InProgressFragment extends Fragment {
+public class InProgressFragment extends Fragment implements TaskListAdapter.RefreshTaskListener {
+    @BindView(R.id.in_progress_task_list_view)
+    RecyclerView rvInProgressTaskList;
+
+    private LinearLayoutManager linearLayoutManager;
+    private TaskListAdapter taskListAdapter;
 
     private InProgressViewModel inProgressViewModel;
 
@@ -24,16 +37,34 @@ public class InProgressFragment extends Fragment {
         inProgressViewModel =
                 new ViewModelProvider(this).get(InProgressViewModel.class);
 
+        inProgressViewModel.init(getActivity());
         View root = inflater.inflate(R.layout.fragment_in_progress, container, false);
         ButterKnife.bind(this, root);
 
-        inProgressViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
+        linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        rvInProgressTaskList.setLayoutManager(linearLayoutManager);
 
+        taskListAdapter = new TaskListAdapter(getActivity(),this);
+        rvInProgressTaskList.setAdapter(taskListAdapter);
+
+        inProgressViewModel.getTasks().observe(getViewLifecycleOwner(), new Observer<List<Task>>() {
+            @Override
+            public void onChanged(@Nullable List<Task> tasks) {
+                taskListAdapter.setItem(tasks);
             }
         });
         return root;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        inProgressViewModel.refreshItems();
+    }
+
+    @Override
+    public void didRefreshTask() {
+        inProgressViewModel.refreshItems();
     }
 
 }

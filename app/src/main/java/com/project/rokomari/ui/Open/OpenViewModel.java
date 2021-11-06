@@ -20,7 +20,7 @@ public class OpenViewModel extends ViewModel {
         if(tasks==null){
             tasks=new MutableLiveData<>();
             db=new DatabaseHelper(context);
-            tasks.setValue(db.getAllTasks());
+            tasks.setValue(db.getTasks(0));
         }
     }
 
@@ -29,7 +29,7 @@ public class OpenViewModel extends ViewModel {
     }
 
     public void refreshItems() {
-        tasks.setValue(db.getAllTasks());
+        tasks.setValue(db.getTasks(0));
 
     }
 }

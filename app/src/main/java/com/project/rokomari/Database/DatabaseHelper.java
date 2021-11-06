@@ -158,6 +158,50 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return tasks;
     }
 
+    //type =0; open
+    //type =1; in-progress
+    //type =2; test
+    //type =3; done
+    public List<Task> getTasks(int type) {
+        List<Task> tasks = new ArrayList<>();
+
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + TaskDataModel.TABLE_NAME +" WHERE " + COLUMN_STATUS  + " ="+type
+                                +" ORDER BY " + TaskDataModel.COLUMN_ID + " ASC";
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        try {
+            if (cursor.moveToFirst()) {
+                do {
+
+                    Task task = new Task();
+                    task.setId(cursor.getInt(cursor.getColumnIndex(TaskDataModel.COLUMN_ID)));
+                    task.setTaskName(cursor.getString(cursor.getColumnIndex(TaskDataModel.COLUMN_TASK_NAME)));
+                    task.setCreatedDate(cursor.getString(cursor.getColumnIndex(TaskDataModel.COLUMN_CREATED_DATE)));
+                    task.setDeadline(cursor.getString(cursor.getColumnIndex(TaskDataModel.COLUMN_DEADLINE)));
+                    task.setDescription(cursor.getString(cursor.getColumnIndex(TaskDataModel.COLUMN_DESCRIPTION)));
+                    task.setStatus(cursor.getInt(cursor.getColumnIndex(TaskDataModel.COLUMN_STATUS)));
+                    task.setEmail(cursor.getString(cursor.getColumnIndex(TaskDataModel.COLUMN_EMAIL)));
+                    task.setPhone(cursor.getString(cursor.getColumnIndex(TaskDataModel.COLUMN_PHONE)));
+                    task.setUrl(cursor.getString(cursor.getColumnIndex(TaskDataModel.COLUMN_URL)));
+
+                    tasks.add(task);
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception ex) {
+
+        } finally {
+            cursor.close();
+        }
+
+        // close db connection
+        db.close();
+        return tasks;
+    }
+
 
     public int updateTask(Task task) {
         SQLiteDatabase db = this.getWritableDatabase();
