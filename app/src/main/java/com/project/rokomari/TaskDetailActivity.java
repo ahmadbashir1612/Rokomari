@@ -5,6 +5,7 @@ import androidx.appcompat.widget.LinearLayoutCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -47,7 +48,7 @@ public class TaskDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_task_detail);
 
         ButterKnife.bind(this);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         savedTask = (Task) getIntent().getSerializableExtra("TASK");
 
         tvCreatedDate.setText(savedTask.getCreatedDate());
@@ -76,6 +77,19 @@ public class TaskDetailActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //do whatever
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+    }
 
     @OnClick({R.id.email_layout, R.id.url_layout, R.id.phone_layout})
 
