@@ -12,8 +12,31 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="toolbarStyle">@style/my_Toolbar</item>
+    </style>
+
+    <style name="MyActionBarStyle" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="titleTextStyle">@style/my_Toolbar</item>
+    </style>
+
+    <style name="my_Toolbar" parent="@style/Widget.MaterialComponents.Toolbar">
+        <item name="titleTextColor">@color/black</item>
 
     </style>
 
+    <style name="BottomNavigationTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/black</item>
+    </style>
+
+    <style name="AppThemeForSplashScreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--        <item name="colorPrimaryDark">@color/colorPrimary</item>-->
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionBarSize">60dp</item>
+
+    </style>
 
 </resources>

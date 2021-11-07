@@ -1,4 +1,4 @@
-package com.project.rokomari.ui.test;
+package com.project.rokomari.ui.done;
 
 import android.content.Context;
 
@@ -11,7 +11,7 @@ import com.project.rokomari.model.Task;
 
 import java.util.List;
 
-public class TestViewModel extends ViewModel {
+public class DoneViewModel extends ViewModel {
 
     private MutableLiveData<List<Task>> tasks;
     DatabaseHelper db;
@@ -20,7 +20,7 @@ public class TestViewModel extends ViewModel {
         if(tasks==null){
             tasks=new MutableLiveData<>();
             db=new DatabaseHelper(context);
-            tasks.setValue(db.getTasks(2));
+            tasks.setValue(db.getTasks(3));
         }
     }
 
@@ -29,7 +29,7 @@ public class TestViewModel extends ViewModel {
     }
 
     public void refreshItems() {
-        tasks.setValue(db.getTasks(2));
+        tasks.setValue(db.getTasks(3));
 
     }
 }

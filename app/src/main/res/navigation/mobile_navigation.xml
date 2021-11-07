@@ -15,7 +15,7 @@
         android:id="@+id/navigation_in_progress"
         android:name="com.project.rokomari.ui.InProgress.InProgressFragment"
         android:label="@string/title_in_progress"
-        tools:layout="@layout/fragment_test" />
+        tools:layout="@layout/fragment_in_progress" />
 
     <fragment
         android:id="@+id/navigation_test"
@@ -25,7 +25,7 @@
 
     <fragment
         android:id="@+id/navigation_done"
-        android:name="com.project.rokomari.ui.test.TestFragment"
+        android:name="com.project.rokomari.ui.done.DoneFragment"
         android:label="@string/title_done"
         tools:layout="@layout/fragment_done" />
 </navigation>

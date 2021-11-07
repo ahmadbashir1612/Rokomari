@@ -1,14 +1,18 @@
 package com.project.rokomari;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -67,6 +71,8 @@ public class TaskAddEditActivity extends AppCompatActivity implements PhoneEmail
     String urlText = "", phoneText = "", emailText = "";
     private DatabaseHelper db;
     private Task savedTask;
+    private AlertDialog.Builder dialogBuilder;
+    private AlertDialog alertDialog;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -238,6 +244,24 @@ public class TaskAddEditActivity extends AppCompatActivity implements PhoneEmail
             savedTask.setUrl(urlText);
             db.updateTask(savedTask);
         }
-        finish();
+        showAlertDialog(R.layout.dialog_positive_layout);
+    }
+
+    private void showAlertDialog(int layout){
+        dialogBuilder = new AlertDialog.Builder(this);
+        View layoutView = getLayoutInflater().inflate(layout, null);
+        Button dialogButton = layoutView.findViewById(R.id.btnDialog);
+        dialogBuilder.setView(layoutView);
+        alertDialog = dialogBuilder.create();
+        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        alertDialog.show();
+        alertDialog.setCancelable(false);
+        dialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+                finish();
+            }
+        });
     }
 }
