@@ -1,8 +1,10 @@
 package com.project.rokomari;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -41,6 +43,7 @@ public class TaskDetailActivity extends AppCompatActivity {
     @BindView(R.id.url_layout)
     LinearLayoutCompat urlLayout;
     private Task savedTask;
+    private AlertDialog.Builder alertDetailDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,18 +101,37 @@ public class TaskDetailActivity extends AppCompatActivity {
         switch (view.getId()) {
 
             case R.id.email_layout:
-
+                showEmailUrlPhoneDetailAlertDialog(savedTask.getEmail(),"Email");
                 break;
 
             case R.id.url_layout:
-
+                showEmailUrlPhoneDetailAlertDialog(savedTask.getUrl(),"Url");
                 break;
 
             case R.id.phone_layout:
-
+                showEmailUrlPhoneDetailAlertDialog(savedTask.getPhone(),"Phone");
                 break;
 
 
         }
+    }
+
+    public void showEmailUrlPhoneDetailAlertDialog(String text, String type) {
+
+        alertDetailDialog = new AlertDialog.Builder(this);
+        alertDetailDialog.setTitle(type)
+                .setMessage(text)
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        if(type.equals("Email"))
+            alertDetailDialog.setIcon(R.drawable.ic_email);
+        else if(type.equals("Url"))
+            alertDetailDialog.setIcon(R.drawable.ic_url);
+        else if(type.equals("Phone"))
+            alertDetailDialog.setIcon(R.drawable.ic_phone);
+        alertDetailDialog.show();
     }
 }
